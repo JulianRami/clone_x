@@ -1,4 +1,4 @@
-package com.example.clone_x
+package com.example.clone_x.data
 
 /**
  * Data class to store app posts

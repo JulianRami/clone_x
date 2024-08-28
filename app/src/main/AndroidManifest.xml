@@ -13,10 +13,10 @@
         android:theme="@style/Theme.Clone_x"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerViewActivity"
+            android:name=".rv_activity.RecyclerViewActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".II_activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,11 +1,17 @@
-package com.example.clone_x
+package com.example.clone_x.II_activity
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.clone_x.R
+import com.example.clone_x.data.Post
+import com.example.clone_x.rv_activity.RecyclerViewActivity
+import com.example.clone_x.showToast
 
 class MainActivity : AppCompatActivity() {
 
@@ -64,5 +70,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         llPosts = findViewById(R.id.ll_posts)
+        findViewById<Button>(R.id.btn_rv).setOnClickListener {
+            startActivity(Intent(this, RecyclerViewActivity::class.java))
+        }
     }
 }
