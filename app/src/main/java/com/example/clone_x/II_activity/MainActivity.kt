@@ -8,10 +8,14 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.Composable
 import com.example.clone_x.R
 import com.example.clone_x.data.Post
 import com.example.clone_x.rv_activity.RecyclerViewActivity
 import com.example.clone_x.showToast
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.ui.platform.ComposeView
 
 class MainActivity : AppCompatActivity() {
 
@@ -70,8 +74,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         llPosts = findViewById(R.id.ll_posts)
-        findViewById<Button>(R.id.btn_rv).setOnClickListener {
-            startActivity(Intent(this, RecyclerViewActivity::class.java))
+        val composeButton = findViewById<ComposeView>(R.id.compose_view)
+        composeButton.setContent {
+            ComposeButton()
         }
+    }
+
+    @Composable
+    private fun ComposeButton() {
+        Button (onClick = {
+            startActivity(Intent(this, RecyclerViewActivity::class.java))
+        },
+            content = {
+                Text(text = "Ir a RV")
+            })
     }
 }
